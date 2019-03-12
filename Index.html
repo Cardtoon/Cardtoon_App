@@ -2,13 +2,93 @@
 <html lang="en">
 <head>
     <title>CardToon</title>
+    <link rel="stylesheet" type="text/css" href="bulma.min.css">
     <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 <body>
-    <canvas id="MainCanvas"></canvas>
-    <input type="number" id="Width" placeholder="Width">
-    <br>
-    <input type="number" id="Height" placeholder="Height">
+
+  <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <p style="color:black; font-weight: bold"> Hello World! </p>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Option 1
+        </a>
+
+        <a class="navbar-item">
+          Option 2
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Option 3
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Option 3.1
+            </a>
+            <a class="navbar-item">
+              Option 3.2
+            </a>
+            <a class="navbar-item">
+              Option 3.3
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Option 3.4
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-success">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-success">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="columns">
+  <div class="column is-one-fifth has-background-grey-lighter" id="leftMenu">
+    <aside class="menu">
+    <p class="menu-label">
+      Shapes
+    </p>
+    <ul class="menu-list">
+    <li><a id="createSquare">Sqaure</a></li>
+    <li><a>Rectangle</a></li>
+    <li><a>Circle</a></li>
+  </ul>
+    </ul>
+  </aside>
+</div>
+  <div class="column" id="editingSpace">
+  <canvas id="MainCanvas"></canvas>
+</div>
+</div>
+
+
+
     <script src="fabric.min.js"></script>
     <script src="Main.js"></script>
 </body>

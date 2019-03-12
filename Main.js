@@ -1,27 +1,34 @@
 var c = document.getElementById("MainCanvas");
+var square = document.getElementById("createSquare");
 c.width = 800;
 c.height = 300;
 
 var canvas = new fabric.Canvas('MainCanvas');
 
-// create a rectangle object
-var rect = new fabric.Rect({
-  left: 0,
-  top: 0,
-  fill: 'red',
-  width: x,
-  height: y
+
+square.addEventListener('click', function (e) {
+  // "add" rectangle onto canvas
+  canvas.add(new fabric.Rect({
+    width: 50,
+    height: 50,
+    left: 50,
+    top: 50,
+    fill: 'rgb(255,0,0)'
+  }));
+
+  canvas.item(0).set({
+     borderColor: 'black',
+     cornerColor: 'black',
+     cornerSize: 10,
+     transparentCorners: false,
+     cornerStyle: 'circle'
+   });
 });
 
-// "add" rectangle onto canvas
-canvas.add(rect);
 
-var scaleControl = $('scale-control');
-  scaleControl.oninput = function() {
-    rect.scale(parseFloat(this.value)).setCoords();
-    canvas.requestRenderAll();
-  };
 
-  //test
-
-  //stylesheet
+ document.addEventListener('keydown', function (e) {
+     if(e.code == "Backspace" || e.code == "Delete"){
+       canvas.remove(canvas.getActiveObject());
+     }
+}, false);
