@@ -1,7 +1,8 @@
 canvas
   {
   border-style: solid;
-  border-color: red;
+  border-color: black;
   border-width: 1px;
   margin: 100px;
+  box-shadow: 2px 2px 5px;
   }

@@ -17,18 +17,10 @@ square.addEventListener('click', function (e) {
     top: 100,
     fill: 'rgb(255,0,0)'
   }));
-
   fabric.Object.prototype.set({
-     borderColor: 'black',
-     cornerColor: 'black',
-     cornerSize: 12,
-     transparentCorners: true,
-     cornerStyle: 'circle'
-   });
-
-
+    cornerStrokeColor: 'black'
+  });
 });
-
 
 // create rectangle
 rectangle.addEventListener('click', function (e) {
@@ -40,14 +32,9 @@ rectangle.addEventListener('click', function (e) {
     top: 100,
     fill: 'rgb(0,255,0)'
   }));
-
   fabric.Object.prototype.set({
-     borderColor: 'black',
-     cornerColor: 'black',
-     cornerSize: 12,
-     transparentCorners: true,
-     cornerStyle: 'circle'
-   });
+    cornerStrokeColor: 'black'
+  });
 });
 
 // create Circle
@@ -59,16 +46,42 @@ circle.addEventListener('click', function (e) {
     top: 100,
     fill: 'rgb(0,0,255)'
   }));
-
   fabric.Object.prototype.set({
-     borderColor: 'black',
-     cornerColor: 'black',
-     cornerSize: 12,
-     transparentCorners: true,
-     cornerStyle: 'circle'
-   });
+    cornerStrokeColor: 'black'
+  });
 });
 
+fabric.Object.prototype.customiseCornerIcons({
+    settings: {
+        borderColor: 'black',
+        cornerSize: 12,
+        cornerShape: 'circle',
+        cornerBackgroundColor: 'white',
+        cornerPadding: 10,
+    },
+    tl: {
+      action: 'rotate',
+      cursor: 'cow.png'
+    },
+    tr: {
+        //icon: ''
+    },
+    bl: {
+        //icon: ''
+    },
+    br: {
+        //icon: ''
+    },
+    mb: {
+        //icon: ''
+    },
+    // only is hasRotatingPoint is not set to false
+    mtr: {
+        //icon: ''
+    },
+}, function() {
+    canvas.renderAll();
+} );
 
 // delete function
  document.addEventListener('keydown', function (e) {
